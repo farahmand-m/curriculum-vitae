@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+
+// Set your brand colors
+$primary: #02366b;
+
+// Update Bulma's global variables
+$family-sans-serif: "Ubuntu", sans-serif;
+$title-family: "Ubuntu", Times New Roman;
+$body-size: 12px;
+$gap: 48px;
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/bulma";
+
+// Custom Stylesheets
+
+ul.list {
+  display: flex;
+  flex-direction: column;
+  list-style: square;
+
+  li {
+    margin-bottom: 0.5em;
+
+    span.icon {
+      color: $primary;
+      font-size: 1.25em;
+    }
+  }
+
+  &.has-icons {
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-direction: row;
+
+      span.icon {
+        padding-right: 1em;
+      }
+    }
+
+    &.is-on-right {
+      li {
+        flex-direction: row-reverse;
+
+        span.icon {
+          padding-right: 0;
+          padding-left: 1em;
+        }
+      }
+    }
+  }
+}
+
+.section {
+  padding: 1em 0;
+}
+
+.separator {
+  padding-left: $gap;
+  margin-top: 1em;
+  font-weight: 800;
+  font-size: 1.3em;
+  color: $primary;
+  text-transform: uppercase;
+  border-bottom: 2px solid $primary;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: -23px;
+    content: "\F0766";
+    color: $primary;
+    font: normal normal normal 16px/1 "Material Design Icons";
+    font-weight: bold;
+  }
+}
+
+.nifty {
+  font-style: italic;
+  color: #5c5cff;
+}
+
+.dont-break {
+  break-inside: avoid;
+}
